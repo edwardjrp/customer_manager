@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Selected Media Customer Manager</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+    <%= render :partial => 'layouts/header' %>
+
+    <div class="main-container" id="main-container">
+  			<script type="text/javascript">
+  				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+  			</script>
+
+  			<div class="main-container-inner">
+  				<a class="menu-toggler" id="menu-toggler" href="#">
+  					<span class="menu-text"></span>
+  				</a>
+
+                <%= render :partial => 'layouts/sidebar_main' %>
+
+              <div class="main-content">
+          					<div class="page-content">
+          						<div class="row">
+          							<div class="col-xs-12">
+          								<!-- PAGE CONTENT BEGINS -->
+
+                                        <%= yield %>
+
+                                      <!-- PAGE CONTENT ENDS -->
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            </div><!-- /.page-content -->
+              </div><!-- /.main-content -->
+
+              <!-- ace_settings -->
+              <%= render :partial => 'layouts/ace_settings' %>
+
+            </div><!-- /.main-container-inner -->
+
+    </div><!-- /.main-container -->
+
+    <!-- footer -->
+
+
+</body>
+</html>

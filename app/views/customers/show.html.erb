@@ -1,0 +1,60 @@
+<div class="widget-box">
+	<div class="widget-header">
+		<h4>Customer Maintenance</h4>
+	</div>
+	<div class="widget-body">
+		<fieldset>
+
+          <div class="row">
+       				<div class="col-md-1 col-xs-2"></div>
+       				<div class="col-md-9 col-xs-12">
+
+                        <p id="notice"><%= notice %></p>
+
+                      <div class="row">
+                        <div class="col-md-5 col-xs-12">
+                          <strong class="control-label blue">Name:</strong>
+                          <input value="<%= @customer.name %>" class="col-md-12 col-xs-12" type="text" disabled %>
+                          </div>
+                        <div class="col-md-5 col-xs-12">
+                          <strong class="control-label blue">Phone number:</strong>
+                          <input value="<%= @customer.phone_number %>" class="col-md-12 col-xs-12" type="text" disabled %>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-5 col-xs-12">
+                          <strong class="control-label blue">Email:</strong>
+                          <input value="<%= @customer.email %>" class="col-md-12 col-xs-12" type="text" disabled %>
+                        </div>
+                        <div class="col-md-5 col-xs-12">
+                          <strong class="control-label blue">Dob:</strong>
+                          <input value="<%= @customer.dob %>" class="col-md-12 col-xs-12" type="text" disabled %>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-5 col-xs-12">
+                          <strong class="control-label blue">Address:</strong>
+                          <textarea class="col-md-12 col-xs-12" disabled cols="60" rows="12"><%= @customer.address %></textarea>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                          <div class="form-actions center">
+                            <%= link_to 'Edit', edit_customer_path(@customer), class: "btn btn-sm btn-success", role: "button" %> |
+                            <%= link_to 'Back', customers_path, class: "btn btn-sm btn-success", role: "button" %>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div><!-- col -->
+                			</div><!-- row -->
+
+        </fieldset>
+      	</div>
+      	<!-- widget-body -->
+      </div>
+      <!-- widget-box -->

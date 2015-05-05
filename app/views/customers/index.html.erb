@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h3 class="row header smaller lighter blue"><span class="col-sm-3"><i class="icon-group bigger-160 red"></i>&nbsp; Listing Customers</span>
+  <div class="action-buttons inline">
+      <%= link_to 'New Customer', new_customer_path, class: "btn btn-sm btn-success", role: "button"  %>
+  </div>
+</h3>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="table-responsive">
+
+            <table class="table table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Phone number</th>
+                  <th>Email</th>
+                  <th>Dob</th>
+                  <th>Address</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @customers.each do |customer| %>
+                  <tr>
+                    <td><%= customer.name %></td>
+                    <td><%= customer.phone_number %></td>
+                    <td><%= customer.email %></td>
+                    <td><%= customer.dob %></td>
+                    <td><%= customer.address %></td>
+                    <td class="action-buttons inline">
+                      <%= link_to customer do %>
+                          <i class="icon-eye-open bigger-180 blue"></i>&nbsp;Show
+                      <% end %>
+                    </td>
+                    <td class="action-buttons inline">
+                      <%= link_to edit_customer_path(customer) do %>
+                          <i class="icon-pencil bigger-180 green"></i>&nbsp; Edit
+                      <% end %>
+                    </td>
+                    <td class="action-buttons inline">
+                      <%= link_to customer, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                          <i class="icon-eye-open bigger-180 red"></i>&nbsp; Destroy
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>

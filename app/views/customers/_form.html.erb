@@ -1,0 +1,87 @@
+<div class="widget-box">
+	<div class="widget-header">
+		<h4>Customer Maintenance</h4>
+	</div>
+	<div class="widget-body">
+		<fieldset>
+
+          <div class="row">
+       				<div class="col-md-1 col-xs-2"></div>
+       				<div class="col-md-9 col-xs-12">
+
+                        <%= form_for(@customer, html: {class: "customer"}) do |f| %>
+                          <% if @customer.errors.any? %>
+                            <div id="error_explanation" class="row col-xs-12">
+                              <div class="col-md-1 col-xs-0"></div>
+                              <div class="col-md-10 col-xs-12">
+                                <div class="alert alert-block alert-danger">
+                                  <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                                  <p><strong>
+                                      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+                                      </strong>
+                                      <ul>
+                                      <% @customer.errors.full_messages.each do |message| %>
+                                        <li><%= message %></li>
+                                      <% end %>
+                                      </ul>
+                                  </p>
+
+                                </div>
+                              </div>
+                            </div>
+                          <% end %>
+
+                          <div class="row">
+                            <div class="col-md-5 col-xs-12">
+                                <%= f.label :name, class: "control-label blue" %><br>
+                                <%= f.text_field :name, class: "col-md-12 col-xs-12", "data-validation" => "required", "data-validation-error-msg" => "Customer name must not be blank" %>
+                            </div>
+                              <div class="col-md-5 col-xs-12">
+                                <%= f.label :phone_number, class: "control-label blue" %><br>
+                                <%= f.text_field :phone_number, class: "col-md-12 col-xs-12" %>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-md-5 col-xs-12">
+                                <%= f.label :email, class: "control-label blue" %><br>
+                                <%= f.text_field :email, class: "col-md-12 col-xs-12", "data-validation" => "email", "data-validation-error-msg" => "Invalid email" %>
+                              </div>
+                              <div class="col-md-5 col-xs-12">
+                                <%= f.label :dob, class: "control-label blue" %><br>
+                                <div class="input-group">
+                                    <%= f.text_field :dob, class: "col-md-12 col-xs-12 date-picker", "data-date-format" => "yyyy-mm-dd" %>
+                                    <span class="input-group-addon"><i class="icon-calendar bigger-110"></i></span>
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-md-5 col-xs-12">
+                                <%= f.label :address, class: "control-label blue" %><br>
+                                <%= f.text_area :address, class: "col-md-12 col-xs-12", size: "60x12" %>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                              <div class="form-actions center">
+                                <%= f.submit class: "btn btn-sm btn-success" %> |
+                                <%= link_to 'Show', @customer, class: "btn btn-sm btn-success", role: "button" %> |
+                                <%= link_to 'Back', customers_path , class: "btn btn-sm btn-success", role: "button" %>
+
+                              </div>
+                            </div>
+                          </div>
+
+                        <% end %>
+
+
+                    </div><!-- col -->
+                			</div><!-- row -->
+
+        </fieldset>
+      	</div>
+      	<!-- widget-body -->
+      </div>
+      <!-- widget-box -->
