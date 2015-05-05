@@ -34,7 +34,11 @@
 	</div><!-- #sidebar-shortcuts -->
 
 	<ul class="nav nav-list">
-      <li><a href="#"><i class="icon-home bigger-160 orange"></i><i class="icon-group bigger-160 blue"></i>&nbsp;<span class="menu-text">Customers </span></a></li>
+      <li>
+        <%= link_to customers_path do %>
+            <i class="icon-home bigger-160 orange"></i><i class="icon-group bigger-160 blue"></i>&nbsp;<span class="menu-text">Customers </span>
+        <% end %>
+      </li>
 
 	</ul><!-- /.nav-list -->
 
