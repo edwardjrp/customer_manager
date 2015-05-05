@@ -53,5 +53,5 @@ production:
   <<: *default
   host: 127.0.0.1
   database: sm_customer_manager_production
-  username: sm_customer_manager
+  username: root
   password: <%= ENV['SM_CUSTOMER_MANAGER_DATABASE_PASSWORD'] %>
